@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const { name } = useContext(AuthContext);
-  console.log(name);
+  const { signInUser, googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmitLogin = (e) => {
     e.preventDefault();
@@ -12,7 +13,27 @@ function Login() {
     const email = form.get("email");
     const password = form.get("password");
     console.log(email, password);
+    signInUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((res) => {
+        console.log(res.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="flex justify-center w-full py-10">
       <div className="w-full max-w-md p-8  bg-[#F2F2F2] space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
@@ -65,6 +86,7 @@ function Login() {
         </div>
         <div className="flex justify-center space-x-4">
           <button
+            onClick={handleGoogleSignIn}
             aria-label=" Log in with Google"
             className="p-3  btn btn-circle"
           >

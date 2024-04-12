@@ -5,7 +5,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 // import required modules
-import { Autoplay, Pagination, EffectFade } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
+import SwiperBtn from "./SwiperBtn";
 
 function Hero() {
   return (
@@ -17,16 +18,12 @@ function Hero() {
         delay: 6000,
         disableOnInteraction: false,
       }}
-      pagination={{
-        clickable: true,
-      }}
       loop={true}
-      navigation={true}
-      modules={[Autoplay, EffectFade, Pagination]}
-      className="mySwiper"
+      modules={[Autoplay, EffectFade]}
+      className="mySwiper "
     >
       <SwiperSlide>
-        <div className="bg-hero1 h-[700px] bg-cover bg-center">
+        <div className="bg-hero1  h-[700px] bg-cover bg-center relative ">
           <div className="w-full h-full bg-[#231d06] bg-opacity-60 flex pl-20 justify-center flex-col">
             <h4 className="text-sm pb-4 font-medium text-white tracking-[0.5rem]">
               WELCOME TO ELYSIAN ESTATES
@@ -37,6 +34,9 @@ function Hero() {
             <button className="btn rounded-sm w-fit bg-transparent mt-7 hover:bg-[#BA9230] text-white px-8 btn-md font-bold">
               Discover Now
             </button>
+            <div className="absolute right-14 bottom-10">
+              <SwiperBtn></SwiperBtn>
+            </div>
           </div>
         </div>
       </SwiperSlide>
@@ -52,6 +52,9 @@ function Hero() {
             <button className="btn rounded-sm w-fit bg-transparent mt-7 hover:bg-[#BA9230] text-white px-8 btn-md font-bold">
               Discover Now
             </button>
+            <div className="absolute right-14 bottom-10">
+              <SwiperBtn></SwiperBtn>
+            </div>
           </div>
         </div>
       </SwiperSlide>
@@ -64,9 +67,15 @@ function Hero() {
             <h1 className="text-[65px] font-semibold text-white leading-[80px]">
               North District
             </h1>
-            <button className="btn rounded-sm w-fit bg-transparent mt-7 hover:bg-[#BA9230] text-white px-8 btn-md font-bold">
+            <button
+              htmlFor="projects"
+              className="btn rounded-sm w-fit bg-transparent mt-7 hover:bg-[#BA9230] text-white px-8 btn-md font-bold"
+            >
               Discover Now
             </button>
+            <div className="absolute right-14 bottom-10">
+              <SwiperBtn></SwiperBtn>
+            </div>
           </div>
         </div>
       </SwiperSlide>

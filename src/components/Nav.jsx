@@ -1,5 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../src/assets/images/logo-2.png";
+import { useContext } from "react";
+import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 
 function Nav() {
   const links = (
@@ -8,7 +10,7 @@ function Nav() {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-[#CFA336]"
+              ? "text-[#cfa436]"
               : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
           }
           to="/"
@@ -48,6 +50,19 @@ function Nav() {
       </li>
     </>
   );
+
+  const { user, signOutUser } = useContext(AuthContext);
+
+  const handleSignOutUser = () => {
+    signOutUser()
+      .then(() => {
+        console.log("success signout");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="bg-[#253046] py-2">
       <div className="navbar  max-w-6xl mx-auto">
@@ -88,24 +103,45 @@ function Nav() {
           <ul className=" menu-horizontal space-x-5">{links}</ul>
         </div>
         <div className="navbar-end">
-          {/* <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              />
-            </div>
-          </div> */}
-          <Link
-            to="/login"
-            className="rounded-sm btn font-bold px-6 bg-[#CFA336] border-0 text-white hover:bg-[#b68f2d] "
-          >
-            Login
-          </Link>
+          {user ? (
+            <>
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar z-10 tooltip tooltip-bottom"
+                data-tip={user?.displayName || ""}
+              >
+                <div className="w-10 rounded-full">
+                  <img
+                    alt="Tailwind CSS Navbar component"
+                    src={user?.photoURL || "not found"}
+                  />
+                </div>
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+
+          {user ? (
+            <>
+              <button
+                onClick={handleSignOutUser}
+                className="rounded-sm btn font-bold px-6 bg-[#CFA336] border-0 text-white hover:bg-[#b68f2d] "
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/login"
+                className="rounded-sm btn font-bold px-6 bg-[#CFA336] border-0 text-white hover:bg-[#b68f2d] "
+              >
+                Login
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

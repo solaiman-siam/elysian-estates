@@ -5,6 +5,7 @@ import Contact from "../Pages/Contact";
 import About from "../Pages/About";
 import Login from "../components/Login";
 import SignUp from "../components/SignUp";
+import ProjectDetails from "../Pages/ProjectDetails";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("/data/projects.json"),
       },
       {
         path: "/about",
@@ -30,6 +32,11 @@ export const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/projectdetails/:id",
+        element: <ProjectDetails></ProjectDetails>,
+        loader: () => fetch("/data/projects.json"),
       },
     ],
   },

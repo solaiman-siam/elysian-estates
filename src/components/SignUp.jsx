@@ -1,19 +1,41 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
-  const { name } = useContext(AuthContext);
+  const { createUser, googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmitSignUp = (e) => {
-    console.log(name);
-
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
+    const photoUrl = form.get("photo");
+    const name = form.get("name");
+    console.log(email, password, photoUrl, name);
+    createUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((res) => {
+        console.log(res.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="flex justify-center w-full py-10">
       <div className="w-full max-w-md p-8  bg-[#F2F2F2] space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
@@ -30,6 +52,7 @@ function SignUp() {
             </label>
             <input
               type="text"
+              required
               name="name"
               id="name"
               placeholder="Name"
@@ -44,6 +67,7 @@ function SignUp() {
               type="text"
               name="photo"
               id="photo"
+              required
               placeholder="Name"
               className="w-full px-4 py-3  rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
@@ -56,6 +80,7 @@ function SignUp() {
               type="email"
               name="email"
               id="email"
+              required
               placeholder="Email"
               className="w-full px-4 py-3  rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
@@ -68,6 +93,7 @@ function SignUp() {
               type="password"
               name="password"
               id="password"
+              required
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
@@ -85,6 +111,7 @@ function SignUp() {
         </div>
         <div className="flex justify-center space-x-4">
           <button
+            onClick={handleGoogleSignIn}
             aria-label=" Log in with Google"
             className="p-3  btn btn-circle"
           >
