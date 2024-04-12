@@ -100,7 +100,9 @@ function Nav() {
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className=" menu-horizontal space-x-5">{links}</ul>
+          <ul className=" menu-horizontal space-x-6 uppercase text-sm">
+            {links}
+          </ul>
         </div>
         <div className="navbar-end">
           {user ? (
