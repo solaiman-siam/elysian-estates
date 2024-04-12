@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function OurProjects({ project }) {
   const { id, estate_title, image, location } = project;
   return (
-    <div id='projects' className="">
-      <Link className="cursor-pointer ">
+    <div className="">
+      <Link to={`/projectdetails/${id}`} className="cursor-pointer ">
         <div className=" group relative ">
           <span className=" relative  group-hover:text-white">
             <img className="w-full h-[16rem]" src={image} alt="" />

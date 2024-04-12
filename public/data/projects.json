@@ -9,7 +9,12 @@
     "Status": "sale",
     "Area": 2000,
     "location": "New York, USA",
-    "facilities": ["living room", "swimming pool", "kitchen"]
+    "facilities": ["living room", "swimming pool", "kitchen"],
+    "nearby_places": {
+      "school": 200,
+      "hospital": 500,
+      "restaurant": 300
+    }
   },
   {
     "image": "https://i.postimg.cc/wjcHcX64/Beach-View-1-A.png",
@@ -21,7 +26,12 @@
     "Status": "sale",
     "Area": 3000,
     "location": "Malibu, USA",
-    "facilities": ["living room", "swimming pool", "beach access"]
+    "facilities": ["living room", "swimming pool", "beach access"],
+    "nearby_places": {
+      "school": 300,
+      "hospital": 700,
+      "restaurant": 400
+    }
   },
   {
     "image": "https://i.postimg.cc/L80DW76J/infinite-views-79-Njp-XDOJU8-unsplash.jpg",
@@ -33,7 +43,12 @@
     "Status": "sale",
     "Area": 10000,
     "location": "Bali, Indonesia",
-    "facilities": ["swimming pool", "spa", "restaurant"]
+    "facilities": ["swimming pool", "spa", "restaurant"],
+    "nearby_places": {
+      "school": 1000,
+      "hospital": 800,
+      "restaurant": 200
+    }
   },
   {
     "image": "https://i.postimg.cc/JhqgtK1m/sara-dubler-Koei-7y-Yt-Io-unsplash.jpg",
@@ -45,7 +60,12 @@
     "Status": "sale",
     "Area": 50,
     "location": "Caribbean",
-    "facilities": ["private beach", "villa", "boat dock"]
+    "facilities": ["private beach", "villa", "boat dock"],
+    "nearby_places": {
+      "school": 2000,
+      "hospital": 1000,
+      "restaurant": 500
+    }
   },
   {
     "image": "https://i.postimg.cc/YSbgvLZT/pj-1-740x520.jpg",
@@ -57,7 +77,12 @@
     "Status": "rent",
     "Area": 4000,
     "location": "Cannes, France",
-    "facilities": ["living room", "swimming pool", "garden"]
+    "facilities": ["living room", "swimming pool", "garden"],
+    "nearby_places": {
+      "school": 500,
+      "hospital": 600,
+      "restaurant": 200
+    }
   },
   {
     "image": "https://i.postimg.cc/wjWLvsSZ/pj-3-740x520.jpg",
@@ -69,6 +94,11 @@
     "Status": "sale",
     "Area": 15000,
     "location": "Beverly Hills, USA",
-    "facilities": ["home theater", "swimming pool", "tennis court"]
+    "facilities": ["home theater", "swimming pool", "tennis court"],
+    "nearby_places": {
+      "school": 300,
+      "hospital": 400,
+      "restaurant": 100
+    }
   }
 ]

@@ -67,10 +67,7 @@ function Hero() {
             <h1 className="text-[65px] font-semibold text-white leading-[80px]">
               North District
             </h1>
-            <button
-              htmlFor="projects"
-              className="btn rounded-sm w-fit bg-transparent mt-7 hover:bg-[#BA9230] text-white px-8 btn-md font-bold"
-            >
+            <button className="btn rounded-sm w-fit bg-transparent mt-7 hover:bg-[#BA9230] text-white px-8 btn-md font-bold">
               Discover Now
             </button>
             <div className="absolute right-14 bottom-10">
