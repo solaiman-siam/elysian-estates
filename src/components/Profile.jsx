@@ -1,11 +1,15 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
+import { Helmet } from "react-helmet-async";
 
 function Profile() {
   const { user } = useContext(AuthContext);
 
   return (
     <div className="flex py-20 justify-center rounded-lg items-center bg-[#b68f2d27]">
+      <Helmet>
+        <title>Elysian | Profile</title>
+      </Helmet>
       <div className="max-w-md p-8 sm:flex sm:space-x-6 bg-[#ffffff45] text-gray-100">
         <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
           <img

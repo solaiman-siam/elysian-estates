@@ -5,8 +5,10 @@ import { FaRegHospital } from "react-icons/fa";
 import { GrRestaurant } from "react-icons/gr";
 import { BiShapeSquare } from "react-icons/bi";
 import { IoIosBed } from "react-icons/io";
+import Maps from "../components/Maps";
+import { Helmet } from "react-helmet-async";
+
 function ProjectDetails() {
- 
   const projects = useLoaderData();
 
   const { id } = useParams();
@@ -22,10 +24,14 @@ function ProjectDetails() {
     location,
     nearby_places,
     number_of_bedrooms,
+    property_location,
   } = element;
 
   return (
     <div className="max-w-6xl mx-auto mt-10  pb-24">
+      <Helmet>
+        <title>Elysian | Project Details</title>
+      </Helmet>
       <div className="grid grid-cols-7 gap-10">
         <div className="col-span-4 relative">
           <h4 className="absolute right-10 text-sm uppercase rounded-sm  text-white font-bold px-2 py-0.5 bg-[#F36F1B] top-8">
@@ -42,7 +48,7 @@ function ProjectDetails() {
           </h4>
           <p className="pt-6">{description}</p>
         </div>
-        <div className=" p-4 col-span-3 rounded-lg bg-opacity-30 bg-[#f3d895]">
+        <div className=" h-fit p-4 col-span-3 rounded-lg bg-opacity-30 bg-[#f3d895]">
           <h3 className="text-2xl font-semibold">General</h3>
           <div className="p-1 mt-4 rounded-md">
             <h3 className="text-base font-semibold pb-4">Nearby Places</h3>
@@ -59,7 +65,7 @@ function ProjectDetails() {
                 <div>
                   <h4>Hospital</h4>
                   <h4>
-                    <h4>{nearby_places.hospital}m away</h4>
+                    <span>{nearby_places.hospital}m away</span>
                   </h4>
                 </div>
               </div>
@@ -67,7 +73,7 @@ function ProjectDetails() {
                 <GrRestaurant size={20} />
                 <div>
                   <h4>Restaurant</h4>
-                  <h4>{<h4>{nearby_places.restaurant}m away</h4>}</h4>
+                  <h4>{<span>{nearby_places.restaurant}m away</span>}</h4>
                 </div>
               </div>
             </div>
@@ -85,7 +91,7 @@ function ProjectDetails() {
                 <IoIosBed size={20} />
                 <div>
                   <h4>
-                    <h4>{number_of_bedrooms} Bed</h4>
+                    <span>{number_of_bedrooms} Bed</span>
                   </h4>
                 </div>
               </div>
@@ -99,6 +105,12 @@ function ProjectDetails() {
                   {element}
                 </p>
               ))}
+            </div>
+          </div>
+          <div className="mt-8 w-full h-fit">
+            <h3 className="text-base font-semibold pb-4">Location</h3>
+            <div className="flex justify-between bg-white p-2 rounded-md">
+              <Maps location={property_location}></Maps>
             </div>
           </div>
         </div>

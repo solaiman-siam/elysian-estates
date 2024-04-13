@@ -9,11 +9,15 @@ import expert8 from "../../src/assets/images/teambox_4.jpg";
 import expert9 from "../../src/assets/images/teambox_3.jpg";
 import expert10 from "../../src/assets/images/teambox_2.jpg";
 import expert11 from "../../src/assets/images/teambox_1.jpg";
+import { Helmet } from "react-helmet-async";
 
 function About() {
   return (
     <div className="  pt-20 bg-[#FBFAF8]">
       {/* Our Professional Team */}
+      <Helmet>
+        <title>Elysian | About Us</title>
+      </Helmet>
       <div className="max-w-6xl mx-auto">
         <div className="border-l-[3px] pl-6 border-[#cfa436]">
           <h4 className="text-[#cfa436] font-semibold tracking-[2px]  text-sm uppercase ">

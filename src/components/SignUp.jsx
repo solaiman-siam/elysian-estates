@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function SignUp() {
   const { createUser, googleSignIn, githubSignIn, updateUserProfile } =
@@ -50,6 +51,9 @@ function SignUp() {
 
   return (
     <div className="flex justify-center w-full py-10">
+      <Helmet>
+        <title>Elysian | SignUp</title>
+      </Helmet>
       <div className="w-full max-w-md p-8  bg-[#F2F2F2] space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
         <h1 className="text-2xl font-bold text-center">Create an account</h1>
         <form

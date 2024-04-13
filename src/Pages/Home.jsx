@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import { useLoaderData } from "react-router-dom";
 import OurProjects from "../components/OurProjects";
 import Reviews from "../components/Reviews";
+import { Helmet } from "react-helmet-async";
 
 function Home() {
   const projects = useLoaderData();
@@ -10,6 +11,9 @@ function Home() {
   return (
     <div className="">
       <Hero></Hero>
+      <Helmet>
+        <title>Elysian | Home</title>
+      </Helmet>
 
       <div className="bg-[#F5F6F7]">
         <div className=" pt-24  max-w-6xl mx-auto pb-20">
@@ -28,6 +32,7 @@ function Home() {
         <div>
           <Reviews></Reviews>
         </div>
+        <div></div>
       </div>
     </div>
   );

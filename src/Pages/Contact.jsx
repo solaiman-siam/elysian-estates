@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import ContactForm from "../components/ContactForm";
 
 function Contact() {
   return (
     <div className="my-24 max-w-6xl mx-auto">
+      <Helmet>
+        <title>Elysian | Contact </title>
+      </Helmet>
       <div className="">
         <div className="bg-[#253046] pl-24  py-24 grid grid-cols-3 gap-14">
           <div>

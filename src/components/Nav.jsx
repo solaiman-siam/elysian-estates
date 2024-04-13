@@ -129,7 +129,7 @@ function Nav() {
                 className="btn btn-ghost btn-circle avatar z-10 tooltip tooltip-bottom"
                 data-tip={user?.displayName || ""}
               >
-                <div className="w-10 rounded-full">
+                <div className="w-10 mt-1 rounded-full">
                   <img
                     alt="Tailwind CSS Navbar component"
                     src={user?.photoURL || "not found"}
@@ -145,7 +145,7 @@ function Nav() {
             <>
               <button
                 onClick={handleSignOutUser}
-                className="rounded-sm btn btn-sm font-bold px-6 bg-[#CFA336] border-0 text-white hover:bg-[#b68f2d] "
+                className="rounded-sm  btn btn-sm font-bold px-4 bg-[#CFA336] border-0 text-white hover:bg-[#b68f2d] "
               >
                 Logout
               </button>
@@ -154,7 +154,7 @@ function Nav() {
             <>
               <Link
                 to="/login"
-                className="rounded-sm btn btn-sm font-bold px-6 bg-[#CFA336] border-0 text-white hover:bg-[#b68f2d] "
+                className="rounded-sm btn btn-sm font-bold px-4 bg-[#CFA336] border-0 text-white hover:bg-[#b68f2d] "
               >
                 Login
               </Link>

@@ -9,6 +9,10 @@
     "Status": "sale",
     "number_of_bedrooms": 8,
     "Area": 2000,
+    "property_location": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    },
     "location": "New York, USA",
     "facilities": ["living room", "swimming pool", "kitchen"],
     "nearby_places": {
@@ -27,6 +31,10 @@
     "Status": "rent",
     "number_of_bedrooms": 8,
     "Area": 3000,
+    "property_location": {
+      "latitude": 34.0356,
+      "longitude": -118.6894
+    },
     "location": "Malibu, USA",
     "facilities": ["living room", "swimming pool", "beach access"],
     "nearby_places": {
@@ -44,6 +52,10 @@
     "price": 10000000,
     "Status": "sale",
     "Area": 10000,
+    "property_location": {
+      "latitude": -8.4095,
+      "longitude": 115.1889
+    },
     "number_of_bedrooms": 8,
     "location": "Bali, Indonesia",
     "facilities": ["swimming pool", "spa", "restaurant"],
@@ -63,6 +75,10 @@
     "Status": "sale",
     "number_of_bedrooms": 10,
     "Area": 50,
+    "property_location": {
+      "latitude": 18.155,
+      "longitude": -63.0538
+    },
     "location": "Caribbean",
     "facilities": ["private beach", "villa", "boat dock"],
     "nearby_places": {
@@ -81,6 +97,10 @@
     "Status": "rent",
     "number_of_bedrooms": 12,
     "Area": 4000,
+    "property_location": {
+      "latitude": 43.5528,
+      "longitude": 7.0174
+    },
     "location": "Cannes, France",
     "facilities": ["living room", "swimming pool", "garden"],
     "nearby_places": {
@@ -99,6 +119,10 @@
     "Status": "sale",
     "number_of_bedrooms": 9,
     "Area": 15000,
+    "property_location": {
+      "latitude": 34.0736,
+      "longitude": -118.4004
+    },
     "location": "Beverly Hills, USA",
     "facilities": ["home theater", "swimming pool", "tennis court"],
     "nearby_places": {

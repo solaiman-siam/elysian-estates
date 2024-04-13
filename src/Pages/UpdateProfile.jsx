@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
+import { Helmet } from "react-helmet-async";
 
 function UpdateProfile() {
   const { user, updateUserProfile } = useContext(AuthContext);
@@ -22,6 +23,9 @@ function UpdateProfile() {
 
   return (
     <div className=" py-20 flex flex-col items-center bg-[#b68f2d27] ">
+      <Helmet>
+        <title>Elysian | Update Profile</title>
+      </Helmet>
       <div className="max-w-md p-8 sm:flex sm:space-x-6 bg-[#ffffff7f] text-gray-100">
         <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
           <img

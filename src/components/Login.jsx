@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function Login() {
   const { signInUser, googleSignIn, githubSignIn } = useContext(AuthContext);
@@ -49,6 +50,9 @@ function Login() {
 
   return (
     <div className="flex justify-center w-full py-10">
+      <Helmet>
+        <title>Elysian | Login</title>
+      </Helmet>
       <div className="w-full max-w-md p-8  bg-[#F2F2F2] space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
         <h1 className="text-2xl font-bold text-center">Login</h1>
         <form
