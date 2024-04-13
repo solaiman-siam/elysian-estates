@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 
 import { useLoaderData } from "react-router-dom";
 import OurProjects from "../components/OurProjects";
+import Reviews from "../components/Reviews";
 
 function Home() {
   const projects = useLoaderData();
@@ -24,6 +25,9 @@ function Home() {
               <OurProjects key={project.id} project={project}></OurProjects>
             ))}
           </div>
+        </div>
+        <div>
+          <Reviews></Reviews>
         </div>
       </div>
     </div>
