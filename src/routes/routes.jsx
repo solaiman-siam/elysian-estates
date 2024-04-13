@@ -9,6 +9,7 @@ import ProjectDetails from "../Pages/ProjectDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Error from "../components/Error";
 import UpdateProfile from "../Pages/UpdateProfile";
+import Profile from "../components/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -47,9 +48,21 @@ export const router = createBrowserRouter([
         loader: () => fetch("/data/projects.json"),
       },
       {
-        path: '/updateprofile',
-        element: <UpdateProfile></UpdateProfile>
-      }
+        path: "/updateprofile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

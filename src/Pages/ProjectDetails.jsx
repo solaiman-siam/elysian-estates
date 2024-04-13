@@ -6,13 +6,14 @@ import { GrRestaurant } from "react-icons/gr";
 import { BiShapeSquare } from "react-icons/bi";
 import { IoIosBed } from "react-icons/io";
 function ProjectDetails() {
+ 
   const projects = useLoaderData();
+
   const { id } = useParams();
   const element = projects.find((project) => project.id == id);
   const {
     image,
     estate_title,
-    segment_name,
     description,
     price,
     Status,

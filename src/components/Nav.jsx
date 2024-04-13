@@ -4,68 +4,8 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 
 function Nav() {
-  const links = (
-    <>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "text-[#cfa436]"
-              : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
-          }
-          to="/"
-        >
-          <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
-            Home
-          </span>
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "text-[#CFA336]"
-              : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
-          }
-          to="/about"
-        >
-          <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
-            About us
-          </span>
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "text-[#CFA336]"
-              : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
-          }
-          to="/contact"
-        >
-          <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
-            Contact
-          </span>
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "text-[#CFA336]"
-              : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
-          }
-          to="/updateprofile"
-        >
-          <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
-            Update Profile
-          </span>
-        </NavLink>
-      </li>
-    </>
-  );
-
   const { user, signOutUser } = useContext(AuthContext);
+  const links = <></>;
 
   const handleSignOutUser = () => {
     signOutUser()
@@ -115,13 +55,75 @@ function Nav() {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className=" menu-horizontal space-x-6 uppercase text-sm">
-            {links}
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#cfa436]"
+                    : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
+                }
+                to="/"
+              >
+                <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
+                  Home
+                </span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#CFA336]"
+                    : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
+                }
+                to="/about"
+              >
+                <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
+                  About us
+                </span>
+              </NavLink>
+            </li>
+            {user ? (
+              <>
+                <li>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-[#CFA336]"
+                        : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
+                    }
+                    to="/contact"
+                  >
+                    <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
+                      Contact
+                    </span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-[#CFA336]"
+                        : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
+                    }
+                    to="/updateprofile"
+                  >
+                    <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
+                      Update Profile
+                    </span>
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <></>
+            )}
           </ul>
         </div>
         <div className="navbar-end">
           {user ? (
             <>
-              <div
+              <Link
+                to="/profile"
                 tabIndex={0}
                 role="button"
                 className="btn btn-ghost btn-circle avatar z-10 tooltip tooltip-bottom"
@@ -133,7 +135,7 @@ function Nav() {
                     src={user?.photoURL || "not found"}
                   />
                 </div>
-              </div>
+              </Link>
             </>
           ) : (
             <></>
@@ -143,7 +145,7 @@ function Nav() {
             <>
               <button
                 onClick={handleSignOutUser}
-                className="rounded-sm btn font-bold px-6 bg-[#CFA336] border-0 text-white hover:bg-[#b68f2d] "
+                className="rounded-sm btn btn-sm font-bold px-6 bg-[#CFA336] border-0 text-white hover:bg-[#b68f2d] "
               >
                 Logout
               </button>
@@ -152,7 +154,7 @@ function Nav() {
             <>
               <Link
                 to="/login"
-                className="rounded-sm btn font-bold px-6 bg-[#CFA336] border-0 text-white hover:bg-[#b68f2d] "
+                className="rounded-sm btn btn-sm font-bold px-6 bg-[#CFA336] border-0 text-white hover:bg-[#b68f2d] "
               >
                 Login
               </Link>

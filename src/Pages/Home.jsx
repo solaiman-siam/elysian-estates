@@ -6,7 +6,6 @@ import Reviews from "../components/Reviews";
 
 function Home() {
   const projects = useLoaderData();
-  console.log(projects);
 
   return (
     <div className="">

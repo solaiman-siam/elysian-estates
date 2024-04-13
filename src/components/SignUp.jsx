@@ -4,7 +4,8 @@ import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 import { useNavigate } from "react-router-dom";
 
 function SignUp() {
-  const { createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const { createUser, googleSignIn, githubSignIn, updateUserProfile } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmitSignUp = (e) => {
@@ -12,13 +13,14 @@ function SignUp() {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    const photoUrl = form.get("photo");
+    const photoURL = form.get("photo");
     const name = form.get("name");
-    console.log(email, password, photoUrl, name);
+    console.log(email, password, photoURL, name);
     createUser(email, password)
       .then((res) => {
         console.log(res.user);
         navigate("/");
+        updateUserProfile(name, photoURL);
       })
       .catch((error) => {
         console.log(error);

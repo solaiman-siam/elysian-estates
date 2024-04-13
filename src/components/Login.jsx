@@ -1,11 +1,13 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
   const { signInUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
 
   const handleSubmitLogin = (e) => {
     e.preventDefault();
@@ -16,7 +18,7 @@ function Login() {
     signInUser(email, password)
       .then((res) => {
         console.log(res.user);
-        navigate("/");
+        navigate(location.state || "/");
       })
       .catch((error) => {
         console.log(error);
@@ -27,7 +29,7 @@ function Login() {
     googleSignIn()
       .then((res) => {
         console.log(res.user);
-        navigate("/");
+        navigate(location.state || "/");
       })
       .catch((error) => {
         console.log(error);
@@ -38,6 +40,7 @@ function Login() {
     githubSignIn()
       .then((res) => {
         console.log(res.user);
+        navigate(location.state || "/");
       })
       .catch((error) => {
         console.log(error.message);
@@ -62,6 +65,7 @@ function Login() {
               type="email"
               name="email"
               id="email"
+              required
               placeholder="Email"
               className="w-full px-4 py-3  rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
@@ -74,6 +78,7 @@ function Login() {
               type="password"
               name="password"
               id="password"
+              required
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
