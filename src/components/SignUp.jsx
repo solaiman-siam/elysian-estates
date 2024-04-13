@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,10 @@ import { Helmet } from "react-helmet-async";
 function SignUp() {
   const { createUser, googleSignIn, githubSignIn, updateUserProfile } =
     useContext(AuthContext);
+
+  const [errorAuth, setErrorAuth] = useState("");
   const navigate = useNavigate();
+  console.log(errorAuth);
 
   const handleSubmitSignUp = (e) => {
     e.preventDefault();
@@ -16,15 +19,26 @@ function SignUp() {
     const password = form.get("password");
     const photoURL = form.get("photo");
     const name = form.get("name");
-    console.log(email, password, photoURL, name);
+    setErrorAuth("");
+    if (!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(password)) {
+      return setErrorAuth(
+        "This password is easy to guess. Please use at least one uppercase and one lowercase characters."
+      );
+    }
+    if (password.length < 6) {
+      return setErrorAuth(
+        "This password is easy to guess. Please use at least 6 characters."
+      );
+    }
     createUser(email, password)
       .then((res) => {
         console.log(res.user);
         navigate("/");
         updateUserProfile(name, photoURL);
+        e.target.reset();
       })
       .catch((error) => {
-        console.log(error);
+        setErrorAuth(error);
       });
   };
 
@@ -36,6 +50,7 @@ function SignUp() {
       })
       .catch((error) => {
         console.log(error);
+        setErrorAuth(error);
       });
   };
 
@@ -43,9 +58,11 @@ function SignUp() {
     githubSignIn()
       .then((res) => {
         console.log(res.user);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error.message);
+        setErrorAuth(error);
       });
   };
 
@@ -113,6 +130,13 @@ function SignUp() {
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
+            {errorAuth ? (
+              <>
+                <p className="text-xs text-red-500">{errorAuth}</p>
+              </>
+            ) : (
+              <></>
+            )}
           </div>
           <button className="block w-full btn bg-[#253046] hover:bg-[#253046] text-white p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">
             Sign Up
