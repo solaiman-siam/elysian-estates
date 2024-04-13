@@ -4,7 +4,7 @@ function Reviews() {
   return (
     <div className=" mt-10 ">
       <div className="bg-[#F5F6F7] ">
-        <div className=" px-14 max-w-6xl md:text-left  mx-auto  border-l-[3px] border-[#BA9230]">
+        <div className=" pl-8 max-w-6xl md:text-left  mx-auto  border-l-[3px] border-[#BA9230]">
           <h4 className="text-base pb-4 font-bold text-[#BA9230] tracking-[4px]">
             Reviews
           </h4>
