@@ -27,7 +27,7 @@ function ProjectDetails() {
     <div className="max-w-6xl mx-auto mt-10  pb-24">
       <div className="grid grid-cols-7 gap-10">
         <div className="col-span-4 relative">
-          <h4 className="absolute right-10 text-sm uppercase  text-white font-bold px-2 py-1 bg-[#F36F1B] top-8">
+          <h4 className="absolute right-10 text-sm uppercase rounded-sm  text-white font-bold px-2 py-0.5 bg-[#F36F1B] top-8">
             FOR {Status}
           </h4>
           <img className="rounded-xl" src={image} alt="" />

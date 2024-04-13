@@ -48,6 +48,20 @@ function Nav() {
           </span>
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#CFA336]"
+              : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
+          }
+          to="/updateprofile"
+        >
+          <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
+            Update Profile
+          </span>
+        </NavLink>
+      </li>
     </>
   );
 

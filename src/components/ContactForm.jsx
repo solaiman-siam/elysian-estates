@@ -1,7 +1,7 @@
 function ContactForm() {
   return (
     <div>
-      <div className="container my-12 mx-auto px-2 md:px-4">
+      <div className="container my-12  mx-auto px-2 md:px-4">
         <section className="mb-20">
           <div className="flex justify-start">
             <div className=" md:max-w-xl lg:max-w-3xl mt-10  border-l-[3px] pl-3 border-[#BA9230]">
