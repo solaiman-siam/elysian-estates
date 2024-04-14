@@ -7,6 +7,7 @@ function UpdateProfile() {
   const [edit, setEdit] = useState(false);
 
   const handleUpdateUserForm = (e) => {
+    e.preventDefault();
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
     const photoURL = form.get("photoURL");

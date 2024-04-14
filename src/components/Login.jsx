@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 function Login() {
   const { signInUser, googleSignIn, githubSignIn } = useContext(AuthContext);
@@ -20,9 +21,22 @@ function Login() {
       .then((res) => {
         console.log(res.user);
         navigate(location.state || "/");
+        Swal.fire({
+          title: "Logged in Successful!",
+          text: "Continue",
+          icon: "success",
+          confirmButtonColor: "#253046",
+        });
       })
       .catch((error) => {
         console.log(error);
+        Swal.fire({
+          title: "Wrong?",
+          text: "Pasword or Email do not match!",
+          icon: "warning",
+          confirmButtonColor: "#253046",
+          confirmButtonText: "Try Again!",
+        });
       });
   };
 

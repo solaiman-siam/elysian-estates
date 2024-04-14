@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 function SignUp() {
   const { createUser, googleSignIn, githubSignIn, updateUserProfile } =
@@ -33,8 +34,16 @@ function SignUp() {
     createUser(email, password)
       .then((res) => {
         console.log(res.user);
+        Swal.fire({
+          title: "Success!",
+          text: "Congratulation! Your account has been successfully created!",
+          icon: "success",
+          confirmButtonColor: "#253046",
+        });
         navigate("/");
-        updateUserProfile(name, photoURL);
+        updateUserProfile(name, photoURL).then(() => {
+          console.log("update successful");
+        });
         e.target.reset();
       })
       .catch((error) => {
