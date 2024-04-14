@@ -1,14 +1,16 @@
 function ContactForm() {
   return (
     <div>
-      <div className="container my-12  mx-auto px-2 md:px-4">
-        <section className="mb-20">
+      <div className="container my-12 lg:px-0  mx-auto px-6 md:px-4">
+        <section className="lg:mb-20 mb-4 md:mb-16">
           <div className="flex justify-start">
             <div className=" md:max-w-xl lg:max-w-3xl mt-10  border-l-[3px] pl-3 border-[#BA9230]">
-              <h4 className="uppercase text-xs px-4 pb-5 font-bold tracking-[4px] text-[#BA9230]">
+              <h4 className="text-xs font-semibold tracking-[4px]  lg:text-sm md:text-sm uppercase md:pb-4 pb-2 lg:pb-5 px-4 text-[#BA9230]">
                 Message
               </h4>
-              <h2 className=" px-4  text-4xl  font-bold">Get In Touch</h2>
+              <h2 className="lg:text-[40px] md:text-4xl px-4 text-2xl font-bold ">
+                Get In Touch
+              </h2>
             </div>
           </div>
 

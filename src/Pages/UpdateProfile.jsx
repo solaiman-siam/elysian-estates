@@ -75,7 +75,7 @@ function UpdateProfile() {
             onSubmit={handleUpdateUserForm}
             noValidate=""
             action=""
-            className="space-y-6 mt-10 w-5/12"
+            className="space-y-6 mt-10 md:w-5/12 w-10/12 lg:w-5/12"
           >
             <div className="space-y-1 text-sm">
               <label htmlFor="name" className="block dark:text-gray-600">

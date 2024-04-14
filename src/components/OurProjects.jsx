@@ -14,10 +14,12 @@ function OurProjects({ project }) {
         </div>
         <div className="flex justify-between items-center mt-5">
           <div className="border-l-[1px] pl-2 w-fit border-[#d0a946]">
-            <h3 className=" hover:text-[#d0a946] text-2xl font-bold">
+            <h3 className=" hover:text-[#d0a946] text-xl md:text-2xl lg:text-2xl font-bold">
               {estate_title}
             </h3>
-            <h4 className="pt-2 text-base text-[#6b6b6b]">{location}</h4>
+            <h4 className="pt-2 text-sm md:text-base lg:text-base text-[#6b6b6b]">
+              {location}
+            </h4>
           </div>
           <div>
             <Link to={`/projectdetails/${id}`}>
@@ -41,7 +43,7 @@ function OurProjects({ project }) {
                     ></path>
                   </svg>
                 </span>
-                <span className="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease text-base">
+                <span className="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full text-sm ease md:text-base lg:text-base">
                   View Property
                 </span>
                 <span className="relative invisible">View Property</span>

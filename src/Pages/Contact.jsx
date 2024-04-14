@@ -3,18 +3,20 @@ import ContactForm from "../components/ContactForm";
 
 function Contact() {
   return (
-    <div className="my-24 max-w-6xl mx-auto">
+    <div className="my-10 lg:my-24 md:my-24 max-w-6xl mx-auto">
       <Helmet>
         <title>Elysian | Contact </title>
       </Helmet>
       <div className="">
-        <div className="bg-[#253046] pl-24  py-24 grid grid-cols-3 gap-14">
+        <div className="bg-[#253046] lg:pl-24 md:pl-24 py-10 md:py-24  lg:py-24 grid grid-cols-1 md:grid-cols-3 px-6 lg:px-0 md:px-0  lg:grid-cols-3 gap-14">
           <div>
             <div className="border-l-[3px] border-[#BA9230] pl-6">
-              <h3 className="text-[#BA9230] text-xs uppercase font-bold tracking-[4px] pb-5">
+              <h3 className="text-[#BA9230] text-xs font-semibold tracking-[2px]  lg:text-sm md:text-sm uppercase md:pb-4 pb-2 lg:pb-5">
                 Contact Us
               </h3>
-              <h2 className="text-4xl font-bold text-white">Our Offices</h2>
+              <h2 className="lg:text-[40px] md:text-4xl text-2xl font-bold text-white">
+                Our Offices
+              </h2>
             </div>
             <p className="  pt-8 text-[#b8b8b8]">
               The arrangement and layout of the apartments maximises natural

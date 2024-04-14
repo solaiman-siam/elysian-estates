@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 function MainLayout() {
   return (
-    <div className="font-lato">
+    <div className="font-lato ">
       <Nav></Nav>
       <Outlet></Outlet>
       <Footer></Footer>

@@ -5,7 +5,6 @@ import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 
 function Nav() {
   const { user, signOutUser } = useContext(AuthContext);
-  const links = <></>;
 
   const handleSignOutUser = () => {
     signOutUser()
@@ -19,13 +18,17 @@ function Nav() {
 
   return (
     <div className="bg-[#253046] py-2">
-      <div className="navbar  max-w-6xl mx-auto">
+      <div className="navbar  max-w-6xl mx-auto px-6 lg:px-0">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn pl-0 text-white btn-ghost lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-7 w-7"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -40,16 +43,78 @@ function Nav() {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu  menu-md dropdown-content mt-3 z-[2] p-2 shadow bg-[#253046] rounded-box w-[90vw]"
             >
-              {links}
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-[#cfa436]"
+                      : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
+                  }
+                  to="/"
+                >
+                  <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
+                    Home
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-[#CFA336]"
+                      : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
+                  }
+                  to="/about"
+                >
+                  <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
+                    About us
+                  </span>
+                </NavLink>
+              </li>
+              {user ? (
+                <>
+                  <li>
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive
+                          ? "text-[#CFA336]"
+                          : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
+                      }
+                      to="/contact"
+                    >
+                      <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
+                        Contact
+                      </span>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive
+                          ? "text-[#CFA336]"
+                          : "font-medium text-white  duration-400  group  transition-all duration-300 ease-in-out"
+                      }
+                      to="/updateprofile"
+                    >
+                      <span className="bg-left-bottom bg-gradient-to-r pb-0.5 from-[#CFA336] to-[#CFA336] bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out">
+                        Update Profile
+                      </span>
+                    </NavLink>
+                  </li>
+                </>
+              ) : (
+                <></>
+              )}
             </ul>
           </div>
           {/* <a className="btn btn-ghost text-xl">daisyUI</a> */}
-          <div className="flex items-center gap-2">
-            <img className="w-10" src={logo} alt="" />
-            <Link className="text-2xl font-medium font-lato text-white">
-              <span className="font-extrabold">Elysian</span>Estates
+          <div className="flex  items-center gap-2">
+            <img className="lg:w-10 md:w-10 w-8" src={logo} alt="" />
+            <Link className="text-2xl font-medium hidden lg:flex md:flex font-lato text-white">
+              <span className="font-extrabold ">Elysian</span>
+              Estates
             </Link>
           </div>
         </div>
