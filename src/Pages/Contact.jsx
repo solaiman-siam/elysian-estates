@@ -8,7 +8,7 @@ function Contact() {
         <title>Elysian | Contact </title>
       </Helmet>
       <div className="">
-        <div className="bg-[#253046] lg:pl-24 md:pl-24 py-10 md:py-24  lg:py-24 grid grid-cols-1 md:grid-cols-3 px-6 lg:px-0 md:px-0  lg:grid-cols-3 gap-14">
+        <div className="bg-[#253046] lg:pl-24 md:pl-8 py-10 md:py-24  lg:py-24 grid grid-cols-1 md:grid-cols-3 px-6 lg:px-0 md:px-0  lg:grid-cols-3 gap-14">
           <div>
             <div className="border-l-[3px] border-[#BA9230] pl-6">
               <h3 className="text-[#BA9230] text-xs font-semibold tracking-[2px]  lg:text-sm md:text-sm uppercase md:pb-4 pb-2 lg:pb-5">

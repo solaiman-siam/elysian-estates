@@ -13,7 +13,7 @@ import { Helmet } from "react-helmet-async";
 
 function About() {
   return (
-    <div className=" px-6 lg:px-0 md:px-0  pt-20 bg-[#FBFAF8]">
+    <div className=" px-6 lg:px-0 md:px-14  pt-20 bg-[#FBFAF8]">
       {/* Our Professional Team */}
       <Helmet>
         <title>Elysian | About Us</title>
@@ -27,7 +27,7 @@ function About() {
             Meet The Professional Team
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-6 mb-20 ">
+        <div className="grid grid-cols-1 md:grid-cols-1  lg:grid-cols-3 gap-6 mb-20 ">
           <div>
             <div className=" group relative mt-14 mb-4">
               <span className=" relative  group-hover:text-white">
