@@ -48,8 +48,8 @@ function Nav() {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#cfa436] px-4 py-1"
-                    : "font-medium text-white group px-4 py-1 transition-all  ease-in-out"
+                    ? "text-[#cfa436] px-4 py-2 text-base"
+                    : "font-medium text-white group px-4 text-base py-2 transition-all  ease-in-out"
                 }
                 to="/"
               >
@@ -61,8 +61,8 @@ function Nav() {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#CFA336] px-4 py-1"
-                    : "font-medium text-white px-4 py-1 duration-400  group  transition-all duration-300 ease-in-out"
+                    ? "text-[#CFA336] px-4 py-2 text-base"
+                    : "font-medium text-white px-4 py-2 text-base duration-400  group  transition-all duration-300 ease-in-out"
                 }
                 to="/about"
               >
@@ -76,8 +76,8 @@ function Nav() {
                   <NavLink
                     className={({ isActive }) =>
                       isActive
-                        ? "text-[#CFA336] px-4 py-1"
-                        : "font-medium text-white px-4 py-1  duration-400  group  transition-all duration-300 ease-in-out"
+                        ? "text-[#CFA336] px-4 py-2 text-base"
+                        : "font-medium text-white px-4 py-2 text-base  duration-400  group  transition-all duration-300 ease-in-out"
                     }
                     to="/contact"
                   >
@@ -89,8 +89,8 @@ function Nav() {
                   <NavLink
                     className={({ isActive }) =>
                       isActive
-                        ? "text-[#CFA336] px-4 py-1"
-                        : "font-medium text-white px-4 py-1  duration-400  group  transition-all duration-300 ease-in-out"
+                        ? "text-[#CFA336] px-4 py-2 text-base"
+                        : "font-medium text-white  px-4 py-2 text-base  duration-400  group  transition-all duration-300 ease-in-out"
                     }
                     to="/updateprofile"
                   >
