@@ -110,13 +110,13 @@ function Nav() {
             </ul>
           </div>
           {/* <a className="btn btn-ghost text-xl">daisyUI</a> */}
-          <div className="flex  items-center gap-2">
+          <Link to="/" className="flex  items-center gap-2">
             <img className="lg:w-10 md:w-10 w-8" src={logo} alt="" />
             <Link className="text-2xl font-medium hidden lg:flex md:flex font-lato text-white">
               <span className="font-extrabold ">Elysian</span>
               Estates
             </Link>
-          </div>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className=" menu-horizontal space-x-6 uppercase text-sm">
