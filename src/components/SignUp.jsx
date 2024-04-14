@@ -4,10 +4,13 @@ import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
-
+import { IoIosEye } from "react-icons/io";
+import { IoIosEyeOff } from "react-icons/io";
 function SignUp() {
   const { createUser, googleSignIn, githubSignIn, updateUserProfile } =
     useContext(AuthContext);
+
+  const [showPassword, setShowPassword] = useState(false);
 
   const [errorAuth, setErrorAuth] = useState("");
   const navigate = useNavigate();
@@ -56,6 +59,12 @@ function SignUp() {
       .then((res) => {
         console.log(res.user);
         navigate("/");
+        Swal.fire({
+          title: "Logged in Successful!",
+          text: "Continue",
+          icon: "success",
+          confirmButtonColor: "#253046",
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -68,6 +77,12 @@ function SignUp() {
       .then((res) => {
         console.log(res.user);
         navigate("/");
+        Swal.fire({
+          title: "Logged in Successful!",
+          text: "Continue",
+          icon: "success",
+          confirmButtonColor: "#253046",
+        });
       })
       .catch((error) => {
         console.log(error.message);
@@ -127,18 +142,32 @@ function SignUp() {
               className="w-full px-4 py-3  rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
           </div>
-          <div className="space-y-1 text-sm">
+          <div className="space-y-1 text-sm relative">
             <label htmlFor="password" className="block dark:text-gray-600">
               Password
             </label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               id="password"
               required
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
+            <div
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-5 top-8 cursor-pointer"
+            >
+              {showPassword ? (
+                <>
+                  <IoIosEye size={24} />
+                </>
+              ) : (
+                <>
+                  <IoIosEyeOff size={24} />
+                </>
+              )}
+            </div>
             {errorAuth ? (
               <>
                 <p className="text-xs text-red-500">{errorAuth}</p>

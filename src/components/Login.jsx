@@ -1,15 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import { IoIosEye } from "react-icons/io";
+import { IoIosEyeOff } from "react-icons/io";
 
 function Login() {
   const { signInUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmitLogin = (e) => {
     e.preventDefault();
@@ -45,6 +47,12 @@ function Login() {
       .then((res) => {
         console.log(res.user);
         navigate(location.state || "/");
+        Swal.fire({
+          title: "Logged in Successful!",
+          text: "Continue",
+          icon: "success",
+          confirmButtonColor: "#253046",
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -56,6 +64,12 @@ function Login() {
       .then((res) => {
         console.log(res.user);
         navigate(location.state || "/");
+        Swal.fire({
+          title: "Logged in Successful!",
+          text: "Continue",
+          icon: "success",
+          confirmButtonColor: "#253046",
+        });
       })
       .catch((error) => {
         console.log(error.message);
@@ -88,18 +102,32 @@ function Login() {
               className="w-full px-4 py-3  rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
           </div>
-          <div className="space-y-1 text-sm">
+          <div className="space-y-1 text-sm relative">
             <label htmlFor="password" className="block dark:text-gray-600">
               Password
             </label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               id="password"
               required
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
+            <div
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-5 top-8 cursor-pointer"
+            >
+              {showPassword ? (
+                <>
+                  <IoIosEye size={24} />
+                </>
+              ) : (
+                <>
+                  <IoIosEyeOff size={24} />
+                </>
+              )}
+            </div>
             <div className="flex justify-end text-xs dark:text-gray-600">
               <a rel="noopener noreferrer" href="#">
                 Forgot Password?
