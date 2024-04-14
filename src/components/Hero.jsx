@@ -68,7 +68,7 @@ function Hero() {
             <button className="btn rounded-sm w-fit bg-transparent mt-2 md:mt-7  lg:mt-7 hover:bg-[#BA9230] text-white px-8 btn-md font-bold">
               Discover Now
             </button>
-            <div className="absolute right-14 bottom-10">
+            <div className="absolute right-8 bottom-6 lg:right-14 md:right-14 md:bottom-10 lg:bottom-10">
               <SwiperBtn></SwiperBtn>
             </div>
           </div>
@@ -86,7 +86,7 @@ function Hero() {
             <button className="btn rounded-sm w-fit bg-transparent mt-2 md:mt-7  lg:mt-7 hover:bg-[#BA9230] text-white px-8 btn-md font-bold">
               Discover Now
             </button>
-            <div className="absolute right-14 bottom-10">
+            <div className="absolute right-8 bottom-6 lg:right-14 md:right-14 md:bottom-10 lg:bottom-10">
               <SwiperBtn></SwiperBtn>
             </div>
           </div>
