@@ -71,7 +71,7 @@ function UpdateProfile() {
 
         <button
           onClick={() => setEdit(!edit)}
-          className="btn rounded-lg text-xs btn-sm ml-10  mt-8 md:mt-0 lg:mt-0 text-white hover:bg-[#253046] bg-[#253046]  "
+          className="btn rounded-lg text-xs btn-sm ml-10 lg:ml-0 md:ml-0  mt-8 md:mt-0 lg:mt-0 text-white hover:bg-[#253046] bg-[#253046]  "
         >
           Edit Profile <FaUserEdit size={15} />
         </button>
