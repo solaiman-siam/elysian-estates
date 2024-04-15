@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import { FaUserEdit } from "react-icons/fa";
 
 function UpdateProfile() {
   const { user, updateUserProfile, setReload } = useContext(AuthContext);
@@ -34,20 +35,19 @@ function UpdateProfile() {
       <Helmet>
         <title>Elysian | Update Profile</title>
       </Helmet>
-      <div className="max-w-md p-8 sm:flex sm:space-x-6 bg-[#ffffff7f] text-gray-100">
+      <div className="max-w-lg rounded-lg p-8 sm:flex sm:space-x-6 bg-[#ffffffc9] text-gray-100">
         <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
           <img
-            src={user?.photoURL || "not found"}
+            src={user?.photoURL || "Not Found"}
             alt=""
             className="object-cover   object-center w-full h-full rounded-full bg-gray-500"
           />
         </div>
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-2">
           <div>
-            <h2 className="text-2xl text-black font-semibold">
-              {user?.displayName || "not found"}
+            <h2 className="text-2xl  text-black font-semibold">
+              {user?.displayName || "Not Found"}
             </h2>
-            <span className="text-sm  text-gray-600">Member</span>
           </div>
           <div className="space-y-1">
             <span className="flex items-center space-x-2">
@@ -63,18 +63,19 @@ function UpdateProfile() {
                 ></path>
               </svg>
               <span className="text-gray-800">
-                {user?.email || "not found"}
+                {user?.email || "Not Found"}
               </span>
             </span>
           </div>
         </div>
+
+        <button
+          onClick={() => setEdit(!edit)}
+          className="btn rounded-lg text-xs btn-sm ml-10  mt-8 md:mt-0 lg:mt-0 text-white hover:bg-[#253046] bg-[#253046]  "
+        >
+          Edit Profile <FaUserEdit size={15} />
+        </button>
       </div>
-      <button
-        onClick={() => setEdit(!edit)}
-        className="btn rounded-sm text-white hover:bg-[#253046] bg-[#253046] mt-5"
-      >
-        Edit Profile
-      </button>
 
       {edit ? (
         <>
@@ -82,7 +83,7 @@ function UpdateProfile() {
             onSubmit={handleUpdateUserForm}
             noValidate=""
             action=""
-            className="space-y-6 mt-10 md:w-5/12 w-10/12 lg:w-5/12"
+            className="space-y-6  mt-10 md:w-5/12 w-10/12 lg:w-5/12"
           >
             <div className="space-y-1 text-sm">
               <label htmlFor="email" className="block dark:text-gray-600">
@@ -93,7 +94,7 @@ function UpdateProfile() {
                 name="email"
                 id="email"
                 disabled
-                defaultValue={user.email}
+                defaultValue={user.email || "Not Found"}
                 className="w-full px-4 py-3 border border-[#e4e4e4] rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
             </div>
