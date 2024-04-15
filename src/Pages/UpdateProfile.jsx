@@ -35,7 +35,7 @@ function UpdateProfile() {
       <Helmet>
         <title>Elysian | Update Profile</title>
       </Helmet>
-      <div className="max-w-lg rounded-lg p-8 sm:flex sm:space-x-6 bg-[#ffffffc9] text-gray-100">
+      <div className="max-w-xl rounded-lg p-8 sm:flex sm:space-x-6 bg-[#ffffffc9] text-gray-100">
         <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
           <img
             src={user?.photoURL || "Not Found"}
@@ -71,7 +71,7 @@ function UpdateProfile() {
 
         <button
           onClick={() => setEdit(!edit)}
-          className="btn rounded-lg text-xs btn-sm ml-10 lg:ml-0 md:ml-0  mt-8 md:mt-0 lg:mt-0 text-white hover:bg-[#253046] bg-[#253046]  "
+          className="btn rounded-lg text-xs btn-sm ml-14 lg:ml-0 md:ml-0  mt-8 md:mt-0 lg:mt-0 text-white hover:bg-[#253046] bg-[#253046]  "
         >
           Edit Profile <FaUserEdit size={15} />
         </button>
