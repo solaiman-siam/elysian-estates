@@ -41,13 +41,14 @@ function SignUp() {
     }
     createUser(email, password)
       .then(() => {
+        navigate("/");
         Swal.fire({
           title: "Success!",
           text: "Congratulation! Your account has been successfully created!",
           icon: "success",
           confirmButtonColor: "#253046",
         });
-        navigate("/");
+
         updateUserProfile(name, photoURL).then(() => {
           console.log("update successful");
           setReload(true);
