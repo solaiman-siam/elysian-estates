@@ -19,17 +19,6 @@ Live site:
 
 <h3>Resources:</h4>
 
-- <a href="https://reactrouter.com/en/main">React Router Dom</a>
-- <a href="https://devdojo.com/tailwindcss/buttons">Tailwindcss Buttons</a>
-- <a href="https://mambaui.com/">Mamba UI - Components</a>
-- <a href="https://www.npmjs.com/package/prop-types">Prop-Types</a>
-- <a href="https://daisyui.com/">Daisy UI</a>
-- <a href="https://tailwindcss.com/">TailwindCSS</a>
 - <a href="https://michalsnik.github.io/aos/">AOS Package</a>
 - <a href="https://swiperjs.com/">Swiper slider</a>
-- <a href="https://sweetalert2.github.io/">Sweetalert2</a>
-- <a href="https://tailwindflex.com/">TailwindFlex</a>
-- <a href="https://www.react-fast-marquee.com/">React-Fast-Marquee</a>
-- <a href="https://www.npmjs.com/package/react-helmet-async">React-Helmet-Async</a>
-- <a href="https://www.davidhu.io/react-spinners/">React-Spinners</a>
-- <a href="https://elysian-estates.web.app">Firebase</a>
+- <a href="https://react-leaflet.js.org/">React-Leaflet</a>
