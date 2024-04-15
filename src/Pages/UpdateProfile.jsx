@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthContextProvider/AuthProviderComponent";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 function UpdateProfile() {
   const { user, updateUserProfile } = useContext(AuthContext);
@@ -14,8 +15,13 @@ function UpdateProfile() {
     console.log(name, photoURL);
     updateUserProfile(name, photoURL)
       .then(() => {
-        console.log("update successfull");
         e.target.reset();
+        Swal.fire({
+          title: "Update Profile Successful!",
+          text: "Please refresh to see your updates",
+          icon: "success",
+          confirmButtonColor: "#253046",
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -78,6 +84,19 @@ function UpdateProfile() {
             className="space-y-6 mt-10 md:w-5/12 w-10/12 lg:w-5/12"
           >
             <div className="space-y-1 text-sm">
+              <label htmlFor="email" className="block dark:text-gray-600">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                disabled
+                defaultValue={user.email}
+                className="w-full px-4 py-3 border border-[#e4e4e4] rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+              />
+            </div>
+            <div className="space-y-1 text-sm">
               <label htmlFor="name" className="block dark:text-gray-600">
                 Name
               </label>
@@ -86,7 +105,7 @@ function UpdateProfile() {
                 name="name"
                 id="name"
                 required
-                placeholder="Name"
+                defaultValue={user.displayName}
                 className="w-full px-4 py-3  rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
             </div>
@@ -99,7 +118,7 @@ function UpdateProfile() {
                 name="photoURL"
                 id="photo"
                 required
-                placeholder="url"
+                defaultValue={user.photoURL}
                 className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
             </div>

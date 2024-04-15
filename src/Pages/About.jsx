@@ -28,7 +28,7 @@ function About() {
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-1  lg:grid-cols-3 gap-6 mb-20 ">
-          <div>
+          <div data-aos="zoom-in-up" data-aos-duration="1000">
             <div className=" group relative mt-14 mb-4">
               <span className=" relative  group-hover:text-white">
                 <img className="w-full " src={expert1} alt="" />
@@ -44,7 +44,7 @@ function About() {
               </h4>
             </div>
           </div>
-          <div>
+          <div data-aos="zoom-in-up" data-aos-duration="1000">
             <div className=" group relative mt-14 mb-4">
               <span className=" relative  group-hover:text-white">
                 <img className="w-full " src={expert2} alt="" />
@@ -60,7 +60,7 @@ function About() {
               </h4>
             </div>
           </div>
-          <div>
+          <div data-aos="zoom-in-up" data-aos-duration="1000">
             <div className=" group relative mt-14 mb-4">
               <span className=" relative  group-hover:text-white">
                 <img className="w-full " src={expert3} alt="" />
@@ -99,7 +99,7 @@ function About() {
           </p>
         </div>
         <div className="grid px-6 lg:px-0 md:px-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 ">
-          <div>
+          <div data-aos="zoom-in-up" data-aos-duration="1000">
             <div className=" group relative mt-14 mb-4">
               <span className=" relative  group-hover:text-white">
                 <img className="w-full " src={expert4} alt="" />
@@ -115,7 +115,7 @@ function About() {
               </h4>
             </div>
           </div>
-          <div>
+          <div data-aos="zoom-in-up" data-aos-duration="1000">
             <div className=" group relative mt-14 mb-4">
               <span className=" relative  group-hover:text-white">
                 <img className="w-full " src={expert5} alt="" />
@@ -131,7 +131,7 @@ function About() {
               </h4>
             </div>
           </div>
-          <div>
+          <div data-aos="zoom-in-up" data-aos-duration="1000">
             <div className=" group relative mt-14 mb-4">
               <span className=" relative  group-hover:text-white">
                 <img className="w-full " src={expert6} alt="" />
@@ -147,7 +147,7 @@ function About() {
               </h4>
             </div>
           </div>
-          <div>
+          <div data-aos="zoom-in-up" data-aos-duration="1000">
             <div className=" group relative mt-14 mb-4">
               <span className=" relative  group-hover:text-white">
                 <img className="w-full " src={expert7} alt="" />
@@ -163,7 +163,7 @@ function About() {
               </h4>
             </div>
           </div>
-          <div>
+          <div data-aos="zoom-in-up" data-aos-duration="1000">
             <div className=" group relative mt-14 mb-4">
               <span className=" relative  group-hover:text-white">
                 <img className="w-full " src={expert8} alt="" />
@@ -179,7 +179,7 @@ function About() {
               </h4>
             </div>
           </div>
-          <div>
+          <div data-aos="zoom-in-up" data-aos-duration="1000">
             <div className=" group relative mt-14 mb-4">
               <span className=" relative  group-hover:text-white">
                 <img className="w-full " src={expert9} alt="" />
@@ -195,7 +195,7 @@ function About() {
               </h4>
             </div>
           </div>
-          <div>
+          <div data-aos="zoom-in-up" data-aos-duration="1000">
             <div className=" group relative mt-14 mb-4">
               <span className=" relative  group-hover:text-white">
                 <img className="w-full " src={expert10} alt="" />
@@ -211,7 +211,7 @@ function About() {
               </h4>
             </div>
           </div>
-          <div>
+          <div data-aos="zoom-in-up" data-aos-duration="1000">
             <div className=" group relative mt-14 mb-4">
               <span className=" relative  group-hover:text-white">
                 <img className="w-full " src={expert11} alt="" />

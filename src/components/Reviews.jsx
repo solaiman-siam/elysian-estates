@@ -16,7 +16,7 @@ function Reviews() {
         <section
           id="testimonials"
           aria-label="What our customers are saying"
-          className="bg-slate-50 pb-8  sm:py-32 lg:hidden md:hidden"
+          className="bg-slate-50 pb-12  py-5 md:py-5 lg:hidden md:flex"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <ul
@@ -143,7 +143,7 @@ function Reviews() {
           <section
             id="testimonials"
             aria-label="What our customers are saying"
-            className=" pb-20 sm:pb-32 hidden lg:flex md:flex "
+            className=" pb-20 sm:pb-32 hidden  lg:flex md:hidden "
           >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
               <ul

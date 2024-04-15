@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function OurProjects({ project }) {
   const { id, estate_title, image, location } = project;
   return (
-    <div className="">
+    <div data-aos="zoom-in-up" data-aos-duration="1000">
       <div className="cursor-pointer ">
         <div className=" group relative ">
           <span className=" relative  group-hover:text-white">
