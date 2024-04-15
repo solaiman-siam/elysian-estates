@@ -7,8 +7,13 @@ import Swal from "sweetalert2";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 function SignUp() {
-  const { createUser, googleSignIn, githubSignIn, updateUserProfile } =
-    useContext(AuthContext);
+  const {
+    createUser,
+    googleSignIn,
+    githubSignIn,
+    updateUserProfile,
+    setReload,
+  } = useContext(AuthContext);
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -35,8 +40,7 @@ function SignUp() {
       );
     }
     createUser(email, password)
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
         Swal.fire({
           title: "Success!",
           text: "Congratulation! Your account has been successfully created!",
@@ -46,6 +50,7 @@ function SignUp() {
         navigate("/");
         updateUserProfile(name, photoURL).then(() => {
           console.log("update successful");
+          setReload(true);
         });
         e.target.reset();
       })
@@ -56,8 +61,7 @@ function SignUp() {
 
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
         navigate("/");
         Swal.fire({
           title: "Logged in Successful!",
@@ -74,8 +78,7 @@ function SignUp() {
 
   const handleGighubSignIn = () => {
     githubSignIn()
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
         navigate("/");
         Swal.fire({
           title: "Logged in Successful!",

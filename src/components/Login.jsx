@@ -20,8 +20,7 @@ function Login() {
     const password = form.get("password");
     console.log(email, password);
     signInUser(email, password)
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
         navigate(location.state || "/");
         Swal.fire({
           title: "Logged in Successful!",
@@ -44,8 +43,7 @@ function Login() {
 
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
         navigate(location.state || "/");
         Swal.fire({
           title: "Logged in Successful!",
@@ -61,8 +59,7 @@ function Login() {
 
   const handleGighubSignIn = () => {
     githubSignIn()
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
         navigate(location.state || "/");
         Swal.fire({
           title: "Logged in Successful!",

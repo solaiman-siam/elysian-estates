@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
 function UpdateProfile() {
-  const { user, updateUserProfile } = useContext(AuthContext);
+  const { user, updateUserProfile, setReload } = useContext(AuthContext);
   const [edit, setEdit] = useState(false);
 
   const handleUpdateUserForm = (e) => {
@@ -13,12 +13,13 @@ function UpdateProfile() {
     const name = form.get("name");
     const photoURL = form.get("photoURL");
     console.log(name, photoURL);
+    setReload(true);
     updateUserProfile(name, photoURL)
       .then(() => {
-        e.target.reset();
+        setReload(false);
         Swal.fire({
           title: "Update Profile Successful!",
-          text: "Please refresh to see your updates",
+          text: "Continue",
           icon: "success",
           confirmButtonColor: "#253046",
         });
